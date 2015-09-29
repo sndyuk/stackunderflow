@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Post text:
+  = @answer.post_text
+
+= link_to 'Edit', edit_answer_path(@answer)
+\|
+= link_to 'Back', answers_path
