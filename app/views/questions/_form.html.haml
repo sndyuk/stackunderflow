@@ -1,9 +1,11 @@
-= simple_form_for(@question) do |f|
+= simple_form_for @question do |f|
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :post_text
+    = f.input :name, placeholder: 'Title', label: false
+    = f.input :post_text, label: false
+
+  %div{ class: 'preview' }
 
   .form-actions
     = f.button :submit

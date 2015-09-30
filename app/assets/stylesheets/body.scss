@@ -47,6 +47,18 @@ a {
   text-decoration: none;
 }
 
+input, textarea {
+  border: 2px solid $light-gray;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+    border-color: $light-blue;
+    box-shadow: 0 0 10px $light-blue;
+  }
+}
+
+
 input[type=submit], input[type=button], button, .button, a.button, a.button:visited, .btn {
   cursor: pointer;
   display: inline-block;
@@ -110,11 +122,11 @@ body {
 
   .underflow {
     position: relative;
-    top: 10px;
+    top: 6px;
     left: 90px;
     width: 128px;
     padding: 8px;
-    transform: rotateZ(8deg);
+    transform: rotateZ(4deg);
     font: 1.7em 'Arial Black';
     font-weight: 500;
     color: $orange;
