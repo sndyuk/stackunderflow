@@ -4,4 +4,12 @@ class Question < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :answers, dependent: :destroy
   has_many :images, dependent: :destroy
+
+  def self.search(query)
+    if query.blank? then
+      all
+    else
+      where(post_text: query)
+    end
+  end
 end

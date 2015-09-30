@@ -1,5 +1,5 @@
 %div{ id: 'questions-list' }
-
+  =paginate @questions, remote: true
   %table
     - @questions.each do |question|
       %tr
