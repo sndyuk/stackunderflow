@@ -52,6 +52,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:name, :post_text, images_files: [])
+    params.require(:question).permit(:name, :post_text)
   end
 end

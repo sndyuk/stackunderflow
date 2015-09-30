@@ -2,7 +2,7 @@
   var partial = $('#questions-list')
   partial.fadeOut(150, 'swing',
     function () {
-      partial.html('<%= escape_javascript (render partial: 'list') %>')
+      partial.html('<%= escape_javascript (render 'list') %>')
       $('.container > .search-form').show().find('#question-q').val('<%= escape_javascript (params[:q]) %>').focus()
       partial.fadeIn(200)
     })
