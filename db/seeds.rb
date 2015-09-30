@@ -1,7 +1,32 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+unless Rails.env.production?
+  100.times do |i|
+    no = i + 1
+    user = User.create!(display_name: "テスト#{no}", email: "test#{no}@sndyuk.jp", password: 'testtest')
+
+    Question.create!(name: "テスト質問#{no} 1", owner: user, post_text: <<-EOT
+とりなくこゑす ゆめさませ
+みよあけわたる ひんかしを
+そらいろはえて おきつへに
+ほふねむれゐぬ もやのうち
+鳥啼く声す 夢覚ませ
+見よ明け渡る 東を
+空色映えて 沖つ辺に
+帆船群れゐぬ 靄の中
+    EOT
+    )
+    Question.create!(name: "テスト質問#{no} 2", owner: user, post_text: <<-EOT
+かごめかごめ 籠の中の鳥は いついつ出やる　夜明けの晩に 鶴と亀と滑った 後ろの正面だあれ？
+
+かごめかごめ 籠の中の鳥は いついつ出やる　夜明けの晩に 鶴と亀が滑った 後ろの正面だあれ？
+
+かごめかごめ 籠の中の鳥は いついつ出やる　夜明けの晩に つるつる滑った 鍋の鍋の底抜け 底抜いてたもれ
+
+かごめかごめ 籠の中の鳥は いつもかつもお鳴きゃぁる（お鳴きやる）　八日の晩に　鶴と亀が滑ったとさ、　ひと山　ふた山　み山　越えて ヤイトを すえて やれ 熱つ や（お灸を据えて、やれ熱や）
+
+籠目籠目　加護の中の鳥居は　いついつ出会う　夜明けの番人　つるっと壁が滑った　後ろの少年だあれ？
+
+かごめかごめ　籠の中の鳥は　いついつ出会う　夜明けの番人　鶴と亀が滑った　後ろの少年だあれ？
+    EOT
+    )
+  end
+end
