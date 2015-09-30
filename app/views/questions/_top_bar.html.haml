@@ -4,7 +4,7 @@
       =gravatar_image_tag current_user.email, gravatar: { d: :identicon, s: 26 }, class: 'user-icon'
       %span{ 'data-user-id' => "#{current_user.id}" } 9,999,999
   - else
-    %ul{ class: 'sign_links'}
+    %ul{ class: 'sign-links'}
       %li= link_to 'Sign Up', new_user_registration_path, class: 'label bg-blue'
       %li= link_to 'Log In', new_user_session_path, class: 'label bg-blue'
 

@@ -58,7 +58,6 @@ input, textarea {
   }
 }
 
-
 input[type=submit], input[type=button], button, .button, a.button, a.button:visited, .btn {
   cursor: pointer;
   display: inline-block;
@@ -183,8 +182,17 @@ body {
     margin-right: 4px;
   }
 
-  .sign_links {
+  .sign-links {
     display: flex;
+
+    a {
+      display: block;
+      font-size: 14px;
+      margin-left: 6px;
+      height: 18px;
+      color: #fff;
+      padding: 8px 6px;
+    }
   }
 
   .search-form {

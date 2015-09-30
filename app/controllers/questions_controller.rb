@@ -23,13 +23,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = current_user.own_questions.new(question_params)
+    @question = current_user.questions.new(question_params)
 
-    respond_to do |format|
-      @question.save!
-      format.html { redirect_to @question, notice: 'Question was successfully created.' }
-      format.json { head :no_content }
-    end
+    @question.save!
+    redirect_to @question, notice: 'Question was successfully created.'
   end
 
   def update
@@ -55,6 +52,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:name, :post_text)
+    params.require(:question).permit(:name, :post_text, images_files: [])
   end
 end
