@@ -1,6 +1,7 @@
 class CreateImages < ActiveRecord::Migration
   def change
     create_table :images do |t|
+      t.string :file_id, null: false
 
       t.timestamps null: false
     end
