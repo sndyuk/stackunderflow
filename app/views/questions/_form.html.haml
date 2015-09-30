@@ -5,10 +5,6 @@
     = f.input :name, placeholder: 'Title', label: false
     = f.input :post_text, label: false
 
-  %div{ class: 'uploader' }
-    %div click here or drag here your images
-    = f.input :images_files, as: :attachment, direct: true, presigned: true, multiple: true
-
   %div{ class: 'preview' }
 
   .form-actions

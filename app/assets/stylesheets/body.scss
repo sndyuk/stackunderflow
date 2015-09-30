@@ -346,32 +346,3 @@ body {
     text-align: center;
   }
 }
-
-.image-list {
-  display: flex;
-  flex-wrap: wrap;
-
-  .thumb {
-    width: 250px;
-  }
-  .label {
-    width: 250px;
-    padding: 4px 8px 4px 4px;
-    text-overflow: ellipsis;
-    color: $gray;
-  }
-
-  .remove-button {
-    float: left;
-    width: 16px;
-    height: 16px;
-    padding: 2px;
-    text-align: center;
-    margin-right: 4px;
-    background-color: $red;
-    font-size: 1.6em;
-    font-weight: bolder;
-    color: #fff;
-    cursor: pointer;
-  }
-}

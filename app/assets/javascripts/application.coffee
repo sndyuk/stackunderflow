@@ -4,7 +4,6 @@
 #= require turbolinks
 #= require marked
 #= require_tree ../../../lib/assets/highlight
-#= require refile
 #= require photoswipe
 #= require settings
 #= require_tree .

@@ -13,9 +13,7 @@
   %div{ class: 'preview' }
   %div{ id: 'question_post_text' }= @question.post_text
 
-  %div{ class: 'image-list' }
-    - @question.images.each do |image|
-      = attachment_image_tag(image, :file, :fill, 300, 300)
-
   - if @question.owner == current_user
     = link_to 'Edit', edit_question_path(@question), class: 'button'
+
+= render 'modules/photoswipe'

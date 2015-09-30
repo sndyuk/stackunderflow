@@ -23,10 +23,6 @@ gem 'paranoia', '~> 2.0'
 gem 'merit'
 gem 'websocket-rails'
 gem 'marked-rails'
-gem 'jack_up'
-gem 'refile', require: ['refile/simple_form', 'refile/rails']
-gem 'refile-mini_magick'
-gem 'refile-memory'
 gem 'photoswipe-rails'
 gem 'gravatar_image_tag'
 
