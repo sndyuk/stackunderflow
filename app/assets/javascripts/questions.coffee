@@ -2,7 +2,7 @@ $(document).trigger('_:ready', {
     callback: ->
       bindImageChangeHandler()
       bindPostTextChangeHandler()
-    , selector: '#questions-new, #questions-edit'
+    , selector: '#questions-new, #questions-edit, #questions-show'
   }
 )
 
@@ -13,7 +13,7 @@ bindImageChangeHandler = ->
 bindPostTextChangeHandler = ->
   $preview = $('.preview')
   $('#question_post_text').on('input change', (e) ->
-    $preview.html(marked(e.target.value,
+    $preview.html(marked(e.target.value || e.target.innerText,
       highlight: (code) ->
         hljs.highlightAuto(code).value
     ))

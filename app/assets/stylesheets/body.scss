@@ -217,7 +217,7 @@ body {
 .header {
   display: flex;
   justify-content: flex-end;
-  margin-top: 24px;
+  margin: 24px 0;
 
   .right {
     margin-top: 16px;
@@ -230,6 +230,24 @@ body {
       color: #fff;
       padding: 6px 8px;
     }
+  }
+}
+
+.vote {
+  width: 64px;
+  margin-top: 32px;
+  text-align: center;
+  .upvote, .downvote {
+    widht: 100%;
+    line-height: 1em;
+    font-size: 2.4em;
+    color: $light-gray;
+    cursor: pointer;
+  }
+  .vote-count {
+    margin: 16px 0;
+    font-size: 2em;
+    color: $gray;
   }
 }
 
@@ -327,13 +345,6 @@ body {
     height: 152px;
     text-align: center;
   }
-}
-
-.preview {
-  padding: 4px 0;
-  margin: 16px 0;
-  border-top: dashed 1px $light-gray;
-  border-bottom: dashed 1px $light-gray;
 }
 
 .image-list {

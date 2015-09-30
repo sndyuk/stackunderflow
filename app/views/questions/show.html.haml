@@ -1,12 +1,21 @@
-%p#notice= notice
+-content_for :page_title, "#{@question.name} - Stack Underflow"
 
-%p
-  %b Name:
-  = @question.name
-%p
-  %b Post text:
-  = @question.post_text
+= render 'top_bar'
+%div{ id: 'questions-show', class: 'container', 'data-params-id' => "#{params[:id]}" }
+  = render 'header'
 
-= link_to 'Edit', edit_question_path(@question)
-\|
-= link_to 'Back', questions_path
+  %div{ id: 'question_name' }= @question.name
+  %div{ class: 'vote' }
+    %span{ class: 'upvote' } ▲
+    %div{ class: 'vote-count' } 999
+    %span{ class: 'downvote' } ▼
+
+  %div{ class: 'preview' }
+  %div{ id: 'question_post_text' }= @question.post_text
+
+  %div{ class: 'image-list' }
+    - @question.images.each do |image|
+      = attachment_image_tag(image, :file, :fill, 300, 300)
+
+  - if @question.owner == current_user
+    = link_to 'Edit', edit_question_path(@question), class: 'button'

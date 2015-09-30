@@ -5,8 +5,31 @@
   height: 24px;
   font-size: 1.6em;
 }
+
 #question_post_text {
   width: 100%;
+}
+
+#questions-show {
+  #question_name {
+    font-size: 2em;
+    border-bottom: solid thin $light-gray;
+  }
+  #question_post_text {
+    display: none;
+  }
+  .preview {
+    min-height: 300px;
+    border-bottom: solid thin $light-gray;
+    margin: 24px 0;
+  }
+  .vote {
+    float: left;
+    width: 120px;
+  }
+  .image-list {
+    display: none;
+  }
 }
 
 #questions-edit, #questions-new {
@@ -17,6 +40,12 @@
   }
   #question_post_text {
     height: 300px;
+  }
+  .preview {
+    padding: 4px 0;
+    margin: 16px 0;
+    border-top: dashed 1px $light-gray;
+    border-bottom: dashed 1px $light-gray;
   }
 }
 
