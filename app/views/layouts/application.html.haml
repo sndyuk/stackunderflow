@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title= content_for?(:page_title) ? yield(:page_title) : 'Stack Underflow'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    %div{ id: 'top-bar' }
+      =link_to root_path, class: 'logo left' do
+        %span Stack
+        %span{ class: 'orange' } Underflow
+      %div{ class: 'right' }
+        = yield :header_right
+        %div{ class: 'spacer-right' }
+    %div{ id: 'container-wrapper' }
+      = yield

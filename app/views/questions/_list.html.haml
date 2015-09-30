@@ -1,0 +1,25 @@
+%div{ id: 'questions-list' }
+
+  %table
+    - @questions.each do |question|
+      %tr
+        %td
+          =link_to question do
+            %div 0
+            %div vote
+        %td
+          =link_to question do
+            %div 1
+            %div answer
+        %td
+          =link_to question do
+            %div 38
+            %div views
+        %td
+          %div=link_to question.name, question
+          %div
+            %div{ class: 'tags left' }
+              %tag{ class: 'tag label'} java
+              %tag{ class: 'tag label'} spring
+            %div{ class: 'modified-time' } modified 12 min ago
+            %div{ class: 'user-info' }=link_to (question.owner_with_deleted.display_name), user_path(question.owner_with_deleted.id)

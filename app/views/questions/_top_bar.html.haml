@@ -1,0 +1,12 @@
+- content_for :header_right, flash: true do
+  - if user_signed_in?
+    = link_to user_path(current_user), class: 'user-info' do
+      =gravatar_image_tag current_user.email, gravatar: { d: :identicon, s: 26 }, class: 'user-icon'
+      %span{ 'data-user-id' => "#{current_user.id}" } 9,999,999
+  - else
+    %ul{ class: 'sign_links'}
+      %li= link_to 'Sign Up', new_user_registration_path, class: 'label bg-blue'
+      %li= link_to 'Log In', new_user_session_path, class: 'label bg-blue'
+
+  = simple_form_for :questions, url: questions_path, method: :get, remote: :true, html: { class: 'search-form', autocomplete: 'off' } do |f|
+    = text_field_tag :q, nil, placeholder: 'search', as: :string, id: nil

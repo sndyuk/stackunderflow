@@ -1,0 +1,7 @@
+%div{ class: 'header' }
+  = link_to root_path, class: 'logo-with-text left' do
+    %div{ class: 'underflow' } Underflow
+  %ul{ class: 'right' }
+    %li= link_to 'Questions', questions_path, class: 'label bg-light-gray'
+    %li= link_to 'Users', users_path, class: 'label bg-light-gray'
+    %li= link_to 'Ask Question', new_question_path, class: 'label bg-light-gray'
