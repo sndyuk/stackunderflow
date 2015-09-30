@@ -14,4 +14,9 @@ class Question < ActiveRecord::Base
       where(post_text: query)
     end
   end
+
+  REGEX_CACHED_IMG_URL = /(!\[.*?\]\(\/attachments\/.*\/)cache(\/.*\))/
+  def post_text=(text)
+    super(text.gsub(REGEX_CACHED_IMG_URL, '\store\2'))
+  end
 end
