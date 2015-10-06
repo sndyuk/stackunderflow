@@ -28,12 +28,12 @@ gem 'gravatar_image_tag'
 
 group :test do
   gem 'sqlite3'
-end
-
-group :development, :test do
-  gem 'rspec-rails'
   gem 'guard-rspec'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -48,6 +48,7 @@ group :development do
   gem 'pry-rails'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'terminal-notifier-guard' if RUBY_PLATFORM =~ /darwin/i
 end
 
 group :development, :production do
