@@ -4,15 +4,12 @@ require 'pages/questions_index_page'
 RSpec.feature '質問一覧表示', :type => :feature do
   given(:questions_index) { QuestionsIndexPage.new }
 
-  around(:each) do |example|
+  before(:each) do
     DatabaseCleaner.start
-    begin
-      example.run
-    ensure
-      DatabaseCleaner.clean
-    end
   end
-
+  after(:each) do
+    DatabaseCleaner.clean
+  end
 
   scenario '初期表示確認' do
     create_list(:question, 3)
