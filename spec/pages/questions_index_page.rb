@@ -2,7 +2,7 @@ class QuestionsIndexPage
   include Capybara::DSL
 
   def visit_page
-    visit '/'
+    visit('/')
     self
   end
 
