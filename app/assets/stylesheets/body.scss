@@ -256,13 +256,18 @@ body {
 }
 
 .error_notification {
+  font-size: 1.2em;
   color: $red;
 }
 
 .field_with_errors {
-  padding: 2px;
+  padding: 8px;
+  margin-bottom: 4px;
   background-color: $red;
-  display: table;
+
+  .error {
+    color: #fff;
+  }
 }
 
 #error_explanation {

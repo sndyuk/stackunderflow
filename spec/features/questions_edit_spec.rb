@@ -52,14 +52,22 @@ RSpec.feature '質問編集', :type => :feature do
       期待した内容で質問が更新されていること(expectation)
     end
 
-    pending 'タイトルを空にして更新する' do
+    scenario 'タイトルを空にして更新する' do
       expectation = build(:question, name: nil, post_text: question.post_text)
       fill_form(expectation)
       questions_edit.submit
-      questions_edit.visit_page(question)
 
-      期待した内容で質問が更新されていること(expectation)
+      必須制約違反エラーがあること('.question_name .error')
     end
+
+    scenario 'タイトルを短めにして更新する' do
+      expectation = build(:question, name: '1234', post_text: question.post_text)
+      fill_form(expectation)
+      questions_edit.submit
+
+      文字長不足エラーがあること('.question_name .error', minlength: 5)
+    end
+
 
     def fill_form(expectation)
       within('.edit_question') do
@@ -73,6 +81,14 @@ RSpec.feature '質問編集', :type => :feature do
         fill_in('question[name]', with: expectation.name)
         fill_in('question[post_text]', with: expectation.post_text)
       end
+    end
+
+    def 必須制約違反エラーがあること(selector)
+      expect(page.find(selector)).to have_text('can\'t be blank')
+    end
+
+    def 文字長不足エラーがあること(selector, minlength)
+      expect(page.find(selector)).to have_text("s too short (minimum is #{minlength} characters)")
     end
   end
 end

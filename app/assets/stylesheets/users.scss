@@ -1,3 +1,35 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'settings';
+
+#users {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: $contentMinWidth;
+  margin: 24px;
+
+  .user {
+    display: flex;
+    width: $contentMinWidth / 4;
+    height: 85px;
+    padding: 4px 4px;
+    margin-left: 32px;
+    font-size: 1.3em;
+
+    .user-icon {
+      height: 48px;
+      margin-right: 4px;
+    }
+
+    .user-info {
+      width: 176px;
+      margin-right: 4px;
+    }
+
+    &:hover {
+      background-color: $orange;
+      transition-duration: 0.3s;
+    }
+    &:not(:hover) {
+      transition-duration: 0.3s;
+    }
+  }
+}

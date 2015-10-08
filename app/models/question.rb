@@ -4,6 +4,10 @@ class Question < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :answers, dependent: :destroy
 
+  validates :owner, presence: true
+  validates :name, presence: true, length: { minimum: 5, maximum: 200 }
+  validates :post_text, presence: true, length: { minimum: 5, maximum: 9999 }
+
   def self.search(query)
     if query.blank? then
       all
